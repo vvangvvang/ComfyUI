@@ -1,8 +1,8 @@
 <div align="center">
 
 # ComfyUI
-**The paddle model GUI and backend.**
-飞桨框架图形化
+**The most powerful and modular diffusion model GUI and backend.**
+
 
 [![Website][website-shield]][website-url]
 [![Dynamic JSON Badge][discord-shield]][discord-url]
