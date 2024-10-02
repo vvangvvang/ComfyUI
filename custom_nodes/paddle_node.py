@@ -299,7 +299,32 @@ class SaveImage:
         return { "ui": { "images": results } }
 
 
+class RandomDataset:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
 
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "randomdataset"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def randomdataset(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
 
 # Set the web directory, any .js file in that directory will be loaded by the frontend as a frontend extension
 # WEB_DIRECTORY = "./somejs"
@@ -321,14 +346,16 @@ async def get_hello(request):
 NODE_CLASS_MAPPINGS = {
     "Example3": Example2,
     "Load Image": LoadImage,
-    "Save Image": SaveImage
+    "Save Image": SaveImage,
+    "RandomDataset" : RandomDataset
 }
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
 #感觉就是别名
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Example3": "加载图像",
+    "Example3": "我算什么东西？",
     "Load Image" : "Load Image",
-    "Save Image" : "Save Image"
+    "Save Image" : "Save Image",
+    "RandomDataset" : "RandomDataset"
     
 }
