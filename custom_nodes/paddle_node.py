@@ -305,7 +305,6 @@ class RandomDataset:
         self.type = "output"
         self.prefix_append = ""
         self.compress_level = 4
-
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -324,6 +323,355 @@ class RandomDataset:
     DESCRIPTION = "Saves the input images to your ComfyUI output directory."
 
     def randomdataset(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+#将numpy数组转化为paddle的tensor
+class to_tensor:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "to_tensor"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def to_tensor(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class transpose:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "transpose"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def transpose(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class backward:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "backward"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def backward(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class Conv2D:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "Conv2D"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def Conv2D(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class BatchNorm2D:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "BatchNorm2D"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def BatchNorm2D(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class MaxPool2D:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "MaxPool2D"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def MaxPool2D(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+class ReLU:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "ReLU"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def ReLU(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class Linear:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "Linear"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def Linear(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class Pad2D:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "Pad2D"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def Pad2D(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class concat:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "concat"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def concat(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+class reshape:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "reshape"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def reshape(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class optimizer:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "optimizer"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def optimizer(self, images, filename_prefix="ComfyUI"):
+        return { "ui": { "images": results } }
+
+
+class save_model:
+    def __init__(self):
+        self.output_dir = folder_paths.get_output_directory()
+        self.type = "output"
+        self.prefix_append = ""
+        self.compress_level = 4
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "images": ("IMAGE", {"tooltip": "The images to save."}),
+                "filename_prefix": ("STRING", {"default": "ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+            }
+        }
+
+    RETURN_TYPES = ()
+    FUNCTION = "save_model"
+
+    OUTPUT_NODE = True
+
+    CATEGORY = "paddle/DataSet"
+    DESCRIPTION = "Saves the input images to your ComfyUI output directory."
+
+    def save_model(self, images, filename_prefix="ComfyUI"):
         return { "ui": { "images": results } }
 
 # Set the web directory, any .js file in that directory will be loaded by the frontend as a frontend extension
@@ -347,7 +695,20 @@ NODE_CLASS_MAPPINGS = {
     "Example3": Example2,
     "Load Image": LoadImage,
     "Save Image": SaveImage,
-    "RandomDataset" : RandomDataset
+    "RandomDataset" : RandomDataset,
+    "to_tensor" : to_tensor,
+    "transpose" : transpose,
+    "backward" : backward,
+    "Conv2D" : Conv2D,
+    "BatchNorm2D" : BatchNorm2D,
+    "MaxPool2D" : MaxPool2D,
+    "ReLU" : ReLU,
+    "Linear" : Linear,
+    "Pad2D" : Pad2D,
+    "concat" : concat,
+    "reshape" : reshape,
+    "optimizer" : optimizer,
+    "save_model" : save_model
 }
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
@@ -356,6 +717,18 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Example3": "我算什么东西？",
     "Load Image" : "Load Image",
     "Save Image" : "Save Image",
-    "RandomDataset" : "RandomDataset"
-    
+    "RandomDataset" : "RandomDataset",
+    "to_tensor" : "to_tensor",
+    "transpose" : "transpose",
+    "backward" : "backward",
+    "Conv2D" : "Conv2D",
+    "BatchNorm2D" : "BatchNorm2D",
+    "MaxPool2D" : "MaxPool2D",
+    "ReLU" : "ReLU",
+    "Linear" : "Linear",
+    "Pad2D" : "Pad2D",
+    "concat" : "concat",
+    "reshape" : "reshape",
+    "optimizer" : "optimizer",
+    "save_model" : "save_model"
 }
